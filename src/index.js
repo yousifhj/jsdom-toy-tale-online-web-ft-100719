@@ -14,3 +14,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
   })
 
 })
+
+function getToys() {
+  fetch("http://localhost:3000/toys")
+  .then(resp => resp.json())
+  .then(toys => {
+    toys.forEach(toy => displayToy(toy))
+  })
+}
